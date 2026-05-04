@@ -476,6 +476,7 @@
 "Assets/Scripts/Journalist.cs"
 "Assets/Scripts/Message.cs"
 "Assets/Scripts/MessageQueue.cs"
+"Assets/Scripts/Open Notes.cs"
 "Assets/Scripts/Person.cs"
 -langversion:9.0
 /deterministic
