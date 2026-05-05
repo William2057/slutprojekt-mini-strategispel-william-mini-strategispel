@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 public abstract class Person
 {
     public string Name;
@@ -11,7 +10,6 @@ public abstract class Person
     public string Location;
     public string ID;
     public int BaselineRisk;
-
     public Person(string name, int age, string work, string location, string id)
     {
         Name = name;
@@ -23,4 +21,13 @@ public abstract class Person
         BaselineRisk = UnityEngine.Random.Range(0, 100);
     }
     public abstract Message GenerateMessage();
+    public virtual int GetRiskLevel()
+    {
+        int criminalBonus = CriminalRecord.Count * 10;
+        return BaselineRisk + criminalBonus;
+    }
+    public bool IsIllegal()
+    {
+        return GetRiskLevel() > 70;
+    }
 }

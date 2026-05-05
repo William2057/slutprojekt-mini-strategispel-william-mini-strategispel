@@ -6,8 +6,9 @@ public class Journalist : Person
     public override Message GenerateMessage()
     {
         return new Message(
-            "The truth must be revealed. I'll be on the plane soon.");
-           
+            "The truth must be revealed. I'll be on the plane soon.",
+            this
+           );
         
     }
 

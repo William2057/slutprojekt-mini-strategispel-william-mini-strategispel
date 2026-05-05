@@ -12,7 +12,9 @@ public class Criminal : Person
     public override Message GenerateMessage()
     {
         return new Message(
-            "Package delivered. Same route as before.");
+            "Package delivered. Same route as before.",
+             this
+             );
     }
 
     public string VagueBehavior()

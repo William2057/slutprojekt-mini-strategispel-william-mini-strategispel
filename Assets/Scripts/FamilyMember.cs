@@ -7,7 +7,9 @@ public class FamilyMember : Person
     public override Message GenerateMessage()
     {
         return new Message(
-            "Hey, you haven't even reached the check-in counter yet? We miss you!");
+            "Hey, you haven't even reached the check-in counter yet? We miss you!",
+            this
+            );
     }
 
     public void InnocentBehavior()
