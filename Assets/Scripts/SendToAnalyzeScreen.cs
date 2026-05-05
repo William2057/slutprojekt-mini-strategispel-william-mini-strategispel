@@ -9,6 +9,7 @@ public class SendToAnalyzeScreen : MonoBehaviour
 {
     public void changeScene()
     {
+        Debug.Log("Button Pressed");
         SceneManager.LoadScene(1);
     }
 }
