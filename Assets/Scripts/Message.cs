@@ -1,15 +1,11 @@
-using System;
-
 public class Message
 {
-    public string Content;
-    public DateTime Timestamp;
+    public string Text;
     public Person Sender;
 
-    public Message(string content, Person sender)
+    public Message(string text, Person sender)
     {
-        Content = content;
+        Text = text;
         Sender = sender;
-        Timestamp = DateTime.Now;
     }
 }

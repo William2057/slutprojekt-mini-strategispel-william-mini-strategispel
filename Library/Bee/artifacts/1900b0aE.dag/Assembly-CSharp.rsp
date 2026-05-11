@@ -475,14 +475,17 @@
 "Assets/Scripts/ButtonToMessagePrefab.cs"
 "Assets/Scripts/Criminal.cs"
 "Assets/Scripts/FamilyMember.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Journalist.cs"
 "Assets/Scripts/loadScene.cs"
 "Assets/Scripts/Message.cs"
 "Assets/Scripts/Open Notes.cs"
 "Assets/Scripts/Person.cs"
+"Assets/Scripts/personManager.cs"
 "Assets/Scripts/RandomBoxSpawner.cs"
 "Assets/Scripts/SendToAnalyzeScreen.cs"
 "Assets/Scripts/Timer.cs"
+"Assets/Scripts/uiManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

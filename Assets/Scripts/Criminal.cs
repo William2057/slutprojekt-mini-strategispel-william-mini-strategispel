@@ -12,7 +12,7 @@ public class Criminal : Person
     public override Message GenerateMessage()
     {
         return new Message(
-            "Package delivered. Same route as before.",
+            "the package will soon be delivered. Same route as before.",
              this
              );
     }
@@ -20,5 +20,9 @@ public class Criminal : Person
     public string VagueBehavior()
     {
         return "Avoid details, use coded phrases.";
+    }
+    public override int GetRiskLevel()
+    {
+        return base.GetRiskLevel() + 50;
     }
 }
