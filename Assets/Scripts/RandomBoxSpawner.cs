@@ -22,7 +22,7 @@ public class RandomBoxSpawner : MonoBehaviour
             {
                 Debug.Log("Clicked inside the box collider!");
                 MoveObject();
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
             }
         }
     }

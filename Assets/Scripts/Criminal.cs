@@ -1,28 +1,49 @@
+using UnityEngine;
 public class Criminal : Person
 {
     public string Specialty;
-
+    private static string[] possibleJobs =
+    {
+        "Import Coordinator",
+        "Freight Dispatcher",
+        "Warehouse Supervisor",
+        "Shipping Consultant",
+        "Private Contractor",
+        "Logistics Manager",
+        "Cargo Handler",
+        "Sales Representative",
+        "Night Shift Supervisor",
+        "Transport Specialist"
+    };
     public Criminal(string name, int age, string location, string id, string specialty)
-        : base(name, age, "Criminal", location, id)
+        : base(
+            name,
+            age,
+            possibleJobs[Random.Range(0, possibleJobs.Length)],
+            location,
+            id)
     {
         Specialty = specialty;
         CriminalRecord.Add("Drug smuggling");
+        CriminalRecord.Add("Identity fraud");
     }
-
     public override Message GenerateMessage()
     {
         return new Message(
-            "the package will soon be delivered. Same route as before.",
-             this
-             );
+            "Package confirmed. Same route. No deviations.",
+            this
+        );
     }
-
-    public string VagueBehavior()
+    public override bool IsIllegal()
     {
-        return "Avoid details, use coded phrases.";
+        return true;
     }
     public override int GetRiskLevel()
     {
-        return base.GetRiskLevel() + 50;
+        return 100;
+    }
+    public string VagueBehavior()
+    {
+        return "Avoid details, use coded phrases.";
     }
 }

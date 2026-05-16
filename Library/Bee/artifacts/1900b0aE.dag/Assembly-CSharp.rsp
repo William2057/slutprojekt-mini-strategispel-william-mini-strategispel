@@ -476,6 +476,7 @@
 "Assets/Scripts/Criminal.cs"
 "Assets/Scripts/FamilyMember.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/GenericPersonList.cs"
 "Assets/Scripts/Journalist.cs"
 "Assets/Scripts/loadScene.cs"
 "Assets/Scripts/Message.cs"

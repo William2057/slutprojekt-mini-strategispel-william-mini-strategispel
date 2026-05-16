@@ -26,7 +26,7 @@ public abstract class Person
         int criminalBonus = CriminalRecord.Count * 10;
         return BaselineRisk + criminalBonus;
     }
-    public bool IsIllegal()
+    public virtual bool IsIllegal()
     {
         return GetRiskLevel() > 70;
     }

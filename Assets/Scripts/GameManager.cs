@@ -46,6 +46,6 @@ public class GameManager : MonoBehaviour
     public void RetryGame()
     {
         ResetGame();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

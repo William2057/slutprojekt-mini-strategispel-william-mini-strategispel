@@ -2,57 +2,46 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class PersonManager : MonoBehaviour
 {
     [Header("UI")]
     public TextMeshProUGUI infoText;
     public TextMeshProUGUI messageText;
     public TextMeshProUGUI OtherText;
-
     private Person currentPerson;
-
     void Start()
     {
         GenerateRandomPerson();
         DisplayPersonInfo();
     }
-
     void GenerateRandomPerson()
     {
-        List<Person> people = new List<Person>();
-
-        people.Add(new Journalist(
+        GenericPersonList<Person> people = new GenericPersonList<Person>();
+        people.AddPerson(new Journalist(
             "Sarah Cole",
             34,
             "New York",
             "JR-4431"
         ));
-
-        people.Add(new Criminal(
+        people.AddPerson(new Criminal(
             "Victor Kane",
             41,
             "Chicago",
             "CR-8821",
             "Forgery"
         ));
-
-        people.Add(new FamilyMember(
+        people.AddPerson(new FamilyMember(
             "Emily Hart",
             28,
             "Boston",
             "FM-2201"
         ));
-
-        int randomIndex = Random.Range(0, people.Count);
-
-        currentPerson = people[randomIndex];
+        int randomIndex = Random.Range(0, people.Count());
+        currentPerson = people.GetPerson(randomIndex);
     }
-
     void DisplayPersonInfo()
     {
         Message msg = currentPerson.GenerateMessage();
-
         infoText.text =
             "PERSON RECORD\n\n" +
             "• Name: " + currentPerson.Name + "\n" +
@@ -88,7 +77,7 @@ public class PersonManager : MonoBehaviour
         bool illegal = currentPerson.IsIllegal();
         if (illegal)
         {
-            GameManager.Instance.AddMoney(100);
+            GameManager.Instance.AddMoney(50);
             OtherText.text = "Correct Decision!";
         }
         else
@@ -104,6 +93,6 @@ public class PersonManager : MonoBehaviour
     }
     void ReturnToMainScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
