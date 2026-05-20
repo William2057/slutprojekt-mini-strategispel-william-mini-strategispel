@@ -33,16 +33,6 @@ public class RandomBoxSpawner : MonoBehaviour
     }
     void MoveObject()
     {
-        if (targetObject == null)
-        {
-            Debug.LogError("No target object assigned!");
-            return;
-        }
-        if (spawnAreas == null || spawnAreas.Length == 0)
-        {
-            Debug.LogError("No spawn areas assigned!");
-            return;
-        }
         BoxCollider2D area = spawnAreas[Random.Range(0, spawnAreas.Length)];
         Vector2 randomPos = GetRandomPointInBounds(area.bounds);
         targetObject.transform.position = randomPos;

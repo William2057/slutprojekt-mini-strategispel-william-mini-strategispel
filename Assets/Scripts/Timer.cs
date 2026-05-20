@@ -41,7 +41,7 @@ public class Timer : MonoBehaviour
 
     void CheckEndConditions()
     {
-        if (GameManager.Instance.Money >= 600)
+        if (GameManager.Instance.Money >= 800)
         {
             SceneManager.LoadScene(3);
         }
