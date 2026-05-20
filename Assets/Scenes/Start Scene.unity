@@ -831,6 +831,7 @@ MonoBehaviour:
   TimerRunning: 1
   Money: 0
   Strikes: 0
+  startButton: {fileID: 0}
 --- !u!1 &1993883304
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,10 +861,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d999acf26a21b744286fb682c5d27919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  CurrentTime: 60
+  CurrentTime: 120
   TimerRunning: 1
   Money: 0
   Strikes: 0
+  startButton: {fileID: 0}
 --- !u!4 &1993883306
 Transform:
   m_ObjectHideFlags: 0

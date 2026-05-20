@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [Header("Game State")]
-    public float CurrentTime = 60f;
+    public float CurrentTime = 120f;
     public bool TimerRunning = false;
     public int Money = 0;
     public int Strikes = 0;
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         Money = 0;
         Strikes = 0;
 
-        CurrentTime = 60f;
+        CurrentTime = 120f;
         TimerRunning = false;
         if (startButton != null)
         {
