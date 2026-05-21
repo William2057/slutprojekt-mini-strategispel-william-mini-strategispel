@@ -7,22 +7,39 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText;
     void Update()
     {
-        if (GameManager.Instance.Strikes >= 2)
+        void Update()
         {
-            SceneManager.LoadScene(2);
-            return;
-        }
-        if (!GameManager.Instance.TimerRunning)
-            return;
-        GameManager.Instance.CurrentTime -= Time.deltaTime;
-        if (GameManager.Instance.CurrentTime <= 0)
-        {
-            GameManager.Instance.CurrentTime = 0;
-            GameManager.Instance.TimerRunning = false;
+            if (GameManager.Instance.GameEnded)
+                return;
+            if (GameManager.Instance.Strikes >= 3)
+            {
+                GameManager.Instance.GameEnded = true;
+                SceneManager.LoadScene(3);
+                return;
+            }
+            if (GameManager.Instance.Strikes >= 3 && !GameManager.Instance.GameEnded)
+            {
+                GameManager.Instance.GameEnded = true;
+                SceneManager.LoadScene(3);
+                return;
+            }
+            if (GameManager.Instance.TimerRunning)
+            {
+                GameManager.Instance.CurrentTime -= Time.deltaTime;
 
-            CheckEndConditions();
+                if (GameManager.Instance.CurrentTime <= 0)
+                {
+                    GameManager.Instance.CurrentTime = 0;
+                    GameManager.Instance.TimerRunning = false;
+
+                    GameManager.Instance.GameEnded = true;
+
+                    CheckEndConditions();
+                    return;
+                }
+            }
+            UpdateTimerUI();
         }
-        UpdateTimerUI();
     }
     void UpdateTimerUI()
     {
@@ -40,5 +57,6 @@ public class Timer : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+
     }
 }

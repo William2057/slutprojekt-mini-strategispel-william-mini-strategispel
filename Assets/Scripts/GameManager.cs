@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool GameEnded = false;
     public static GameManager Instance;
     [Header("Game State")]
     public float CurrentTime = 120f;
@@ -31,8 +32,10 @@ public class GameManager : MonoBehaviour
     {
         Strikes = Mathf.Min(Strikes + 1, 3);
     }
+
     public void ResetGame()
     {
+        GameEnded = false;
         Money = 0;
         Strikes = 0;
 

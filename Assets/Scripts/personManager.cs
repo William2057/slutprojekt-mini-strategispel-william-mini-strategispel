@@ -69,6 +69,7 @@ public class PersonManager : MonoBehaviour
         {
             GameManager.Instance.AddStrike();
             OtherText.text = "Wrong Decision!";
+            ReturnToMainScene();
         }
         ReturnToMainScene();
     }
@@ -80,10 +81,11 @@ public class PersonManager : MonoBehaviour
             GameManager.Instance.AddMoney(50);
             OtherText.text = "Correct Decision!";
         }
-        else
+        if (!illegal)
         {
             GameManager.Instance.AddStrike();
             OtherText.text = "Wrong Decision!";
+            ReturnToMainScene();
         }
         ReturnToMainScene();
     }
@@ -93,6 +95,13 @@ public class PersonManager : MonoBehaviour
     }
     void ReturnToMainScene()
     {
-        SceneManager.LoadScene(1);
+        if (GameManager.Instance.Strikes >= 3)
+        {
+            SceneManager.LoadScene(3);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }
